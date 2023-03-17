@@ -16,7 +16,7 @@ Run the following commands in the django-backend directory:
   - 'admin = Admin.objects.create(user=CustomUser.objects.create_user(first_name="admin", email="example@email.com", username="admin", password="1234"))'
       - change email, username and password fields to whatever logins details you wish for the admin account 
   - 'admin.save()'
-- 'python manage.py runserver'
+- Deploy on server
 
 ## Setting up email server for live use:
 - Instructions to configure email server at the bottom of settings.py
@@ -25,6 +25,7 @@ Run the following commands in the django-backend directory:
 - 'python manage.py populate.py' -> automatically populates the database
 - Change 'DEBUG = True' in settings.py -> allows debugging response when error is encountered
 - Add '127.0.0.1' to ALLOWED_HOSTS in settings.py -> allows server to be run locally
+- 'python manage.py runserver' -> run local development server
 
 ## Usage
 The general workflow of the app is as following:
