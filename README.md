@@ -4,29 +4,31 @@
 For our third year team project, Barclays tasked us to develop an application that would automate the assignment of graduates to new teams in their graduate rotation programme.
 We took this broad requirement and developed it as a Django webapp that takes in data input by an admin and matches graduates to teams based on their expressed preference using a maximum-flow minimum-cost algorithm taken from the NetworkX Python library.
 
-## Installation
-The project was built using python 3.8 and all the project dependencies can be installed by running `pip3 install -r requirements.txt` while in the 'django-backend' folder.
+## Installation (Locally)
+The project was built using python 3.9 and all the project dependencies can be installed by running `pip install -r requirements.txt` while in the 'django-backend' folder.
 
-## Setup
-Run the following commands in the django-backend directory:
-- 'python manage.py makemigrations'
-- 'python manage.py migrate'
-- 'python manage.py shell'
-  - 'from allocationapp.models import CustomUser, Admin'
-  - 'admin = Admin.objects.create(user=CustomUser.objects.create_user(first_name="admin", email="example@email.com", username="admin", password="1234"))'
+To run locally, run the following commands:
+`python manage.py makemigrations`
+`python manage.py migrate`
+`python populate.py`
+
+Also make sure you set `debug=True` within the settings.py file.
+
+## Installation (Server)
+Setup on desired web hosting platform -- we used pythonanywhere. Current implementation of the website can be viewed [here](sh24.eu.pythonanywhere.com)
+
+Navigate to the django-backend directory and enter the following commands in the terminal:
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+- `python manage.py shell`
+  - `from allocationapp.models import CustomUser, Admin`
+  - `admin = Admin.objects.create(user=CustomUser.objects.create_user(first_name="admin", email="example@email.com", username="admin", password="1234"))`
       - change email, username and password fields to whatever logins details you wish for the admin account 
-  - 'admin.save()'
-- Add host address of your choice to ALLOWED_HOSTS in settings.py
+  - `admin.save()`
 - Deploy on server
 
 ## Setting up email server for live use:
 - Instructions to configure email server at the bottom of settings.py
-
-## Testing Setup
-- 'python manage.py populate.py' -> automatically populates the database
-- Change 'DEBUG = True' in settings.py -> allows debugging response when error is encountered
-- Add '127.0.0.1' to ALLOWED_HOSTS in settings.py -> allows server to be run locally
-- 'python manage.py runserver' -> run local development server
 
 ## Usage
 The general workflow of the app is as following:
