@@ -356,7 +356,7 @@ def populate_db(request):
     path = csv_file.path
     with open(path) as f:
 
-        emails = []
+        emails = [CustomUser.email for user in CustomUser.objects.all()]
 
         def name_constraints(value):
             if value is not None and type(value) == str and len(value) < 128:
