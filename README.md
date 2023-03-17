@@ -16,6 +16,7 @@ Run the following commands in the django-backend directory:
   - 'admin = Admin.objects.create(user=CustomUser.objects.create_user(first_name="admin", email="example@email.com", username="admin", password="1234"))'
       - change email, username and password fields to whatever logins details you wish for the admin account 
   - 'admin.save()'
+- Add host address of your choice to ALLOWED_HOSTS in settings.py
 - Deploy on server
 
 ## Setting up email server for live use:
