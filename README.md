@@ -7,6 +7,8 @@ We took this broad requirement and developed it as a Django webapp that takes in
 ## Installation (Locally)
 The project was built using python 3.9 and all the project dependencies can be installed by running `pip install -r requirements.txt` while in the 'django-backend' folder.
 
+NOTE: You must manually run `pip install python-magic-bin` after installing from requirements. This is due to a bug with one of the packages.
+
 To run locally, run the following commands:
 `python manage.py makemigrations`
 `python manage.py migrate`
